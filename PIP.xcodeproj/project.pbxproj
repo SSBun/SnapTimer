@@ -7,23 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C411869E2C057269002518F6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C411869D2C057269002518F6 /* SnapKit */; };
+		C41186A32C0572B9002518F6 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186A22C0572B9002518F6 /* MainTabViewController.swift */; };
+		C41186A62C0572FA002518F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186A52C0572FA002518F6 /* HomeViewController.swift */; };
+		C41186A82C057301002518F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186A72C057301002518F6 /* SettingViewController.swift */; };
+		C41186AA2C0575AD002518F6 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186A92C0575AD002518F6 /* BaseNavigationController.swift */; };
+		C41186AD2C057804002518F6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C41186AC2C057804002518F6 /* Localizable.xcstrings */; };
+		C41186B22C0599BB002518F6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186B12C0599BB002518F6 /* Utils.swift */; };
+		C41186B42C059B64002518F6 /* PIPCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186B32C059B64002518F6 /* PIPCard.swift */; };
+		C41186B62C059DB7002518F6 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186B52C059DB7002518F6 /* NiblessView.swift */; };
+		C41186B82C05C09B002518F6 /* WatchDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186B72C05C09B002518F6 /* WatchDial.swift */; };
+		C41186BA2C05D895002518F6 /* ListLayoutConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186B92C05D895002518F6 /* ListLayoutConfig.swift */; };
+		C41186BC2C05E70F002518F6 /* CardStyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186BB2C05E70F002518F6 /* CardStyleSelectionView.swift */; };
+		C41186BE2C05EE5C002518F6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186BD2C05EE5C002518F6 /* AppStore.swift */; };
+		C41186C12C06B212002518F6 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = C41186C02C06B212002518F6 /* RxBlocking */; };
+		C41186C32C06B212002518F6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C41186C22C06B212002518F6 /* RxCocoa */; };
+		C41186C52C06B212002518F6 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C41186C42C06B212002518F6 /* RxRelay */; };
+		C41186C72C06B4F3002518F6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186C62C06B4F3002518F6 /* BaseViewController.swift */; };
+		C41186CF2C06C464002518F6 /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186CE2C06C464002518F6 /* Rx+Extension.swift */; };
+		C41186D22C06CC77002518F6 /* SFSymbolsMacro in Frameworks */ = {isa = PBXBuildFile; productRef = C41186D12C06CC77002518F6 /* SFSymbolsMacro */; };
+		C41186D42C06CCBF002518F6 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186D32C06CCBF002518F6 /* SFSymbols.swift */; };
+		C41186D62C06F5EB002518F6 /* AddCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186D52C06F5EB002518F6 /* AddCalendarViewController.swift */; };
+		C41186D82C0703AB002518F6 /* StaticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186D72C0703AA002518F6 /* StaticTableView.swift */; };
+		C41186DA2C074786002518F6 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186D92C074786002518F6 /* Date+Extension.swift */; };
+		C41186DD2C074864002518F6 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = C41186DC2C074864002518F6 /* SwiftDate */; };
+		C41186E02C08110F002518F6 /* BuyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41186DF2C08110E002518F6 /* BuyPlan.swift */; };
+		C4456D5E2C081CB90070EC64 /* SwiftRichString in Frameworks */ = {isa = PBXBuildFile; productRef = C4456D5D2C081CB90070EC64 /* SwiftRichString */; };
+		C4456D612C08242F0070EC64 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4456D602C08242F0070EC64 /* Color+Extension.swift */; };
 		C46963BF2C0482F80035D6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46963BE2C0482F80035D6E7 /* AppDelegate.swift */; };
-		C46963C12C0482F80035D6E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46963C02C0482F80035D6E7 /* SceneDelegate.swift */; };
-		C46963C32C0482F80035D6E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46963C22C0482F80035D6E7 /* ViewController.swift */; };
 		C46963C62C0482F80035D6E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46963C42C0482F80035D6E7 /* Main.storyboard */; };
 		C46963C82C0482F90035D6E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46963C72C0482F90035D6E7 /* Assets.xcassets */; };
 		C46963CB2C0482F90035D6E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46963C92C0482F90035D6E7 /* LaunchScreen.storyboard */; };
+		C46963D62C0488640035D6E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46963D52C0488640035D6E7 /* AVKit.framework */; };
+		C46963D82C0488690035D6E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46963D72C0488690035D6E7 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C411869B2C0571DA002518F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C41186A22C0572B9002518F6 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		C41186A52C0572FA002518F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C41186A72C057301002518F6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C41186A92C0575AD002518F6 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		C41186AC2C057804002518F6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		C41186B12C0599BB002518F6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C41186B32C059B64002518F6 /* PIPCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPCard.swift; sourceTree = "<group>"; };
+		C41186B52C059DB7002518F6 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		C41186B72C05C09B002518F6 /* WatchDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDial.swift; sourceTree = "<group>"; };
+		C41186B92C05D895002518F6 /* ListLayoutConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayoutConfig.swift; sourceTree = "<group>"; };
+		C41186BB2C05E70F002518F6 /* CardStyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleSelectionView.swift; sourceTree = "<group>"; };
+		C41186BD2C05EE5C002518F6 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		C41186C62C06B4F3002518F6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C41186CE2C06C464002518F6 /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
+		C41186D32C06CCBF002518F6 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		C41186D52C06F5EB002518F6 /* AddCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarViewController.swift; sourceTree = "<group>"; };
+		C41186D72C0703AA002518F6 /* StaticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableView.swift; sourceTree = "<group>"; };
+		C41186D92C074786002518F6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C41186DF2C08110E002518F6 /* BuyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPlan.swift; sourceTree = "<group>"; };
+		C4456D602C08242F0070EC64 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C46963BB2C0482F80035D6E7 /* PIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46963BE2C0482F80035D6E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C46963C02C0482F80035D6E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C46963C22C0482F80035D6E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C46963C52C0482F80035D6E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C46963C72C0482F90035D6E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C46963CA2C0482F90035D6E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C46963CC2C0482F90035D6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C46963D52C0488640035D6E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		C46963D72C0488690035D6E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +91,125 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41186C52C06B212002518F6 /* RxRelay in Frameworks */,
+				C411869E2C057269002518F6 /* SnapKit in Frameworks */,
+				C41186C12C06B212002518F6 /* RxBlocking in Frameworks */,
+				C41186C32C06B212002518F6 /* RxCocoa in Frameworks */,
+				C41186DD2C074864002518F6 /* SwiftDate in Frameworks */,
+				C46963D82C0488690035D6E7 /* AVFoundation.framework in Frameworks */,
+				C4456D5E2C081CB90070EC64 /* SwiftRichString in Frameworks */,
+				C41186D22C06CC77002518F6 /* SFSymbolsMacro in Frameworks */,
+				C46963D62C0488640035D6E7 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C41186A12C0572A7002518F6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C41186CA2C06B828002518F6 /* CommonView */,
+				C41186C82C06B7CA002518F6 /* Base */,
+				C41186C92C06B7DD002518F6 /* State */,
+				C41186CB2C06B860002518F6 /* Pages */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C41186AB2C0577F6002518F6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C41186AC2C057804002518F6 /* Localizable.xcstrings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C41186C82C06B7CA002518F6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C4456D5F2C08241F0070EC64 /* Extensions */,
+				C41186B12C0599BB002518F6 /* Utils.swift */,
+				C41186D32C06CCBF002518F6 /* SFSymbols.swift */,
+				C41186B52C059DB7002518F6 /* NiblessView.swift */,
+				C41186A22C0572B9002518F6 /* MainTabViewController.swift */,
+				C41186A92C0575AD002518F6 /* BaseNavigationController.swift */,
+				C41186C62C06B4F3002518F6 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C41186C92C06B7DD002518F6 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				C41186B92C05D895002518F6 /* ListLayoutConfig.swift */,
+				C41186BD2C05EE5C002518F6 /* AppStore.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		C41186CA2C06B828002518F6 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				C41186B32C059B64002518F6 /* PIPCard.swift */,
+				C41186D72C0703AA002518F6 /* StaticTableView.swift */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		C41186CB2C06B860002518F6 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				C41186CC2C06B86F002518F6 /* Homepage */,
+				C41186CD2C06B876002518F6 /* Settings */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		C41186CC2C06B86F002518F6 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				C41186A52C0572FA002518F6 /* HomeViewController.swift */,
+				C41186BB2C05E70F002518F6 /* CardStyleSelectionView.swift */,
+				C41186B72C05C09B002518F6 /* WatchDial.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		C41186CD2C06B876002518F6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C41186E12C081129002518F6 /* Models */,
+				C41186A72C057301002518F6 /* SettingViewController.swift */,
+				C41186D52C06F5EB002518F6 /* AddCalendarViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C41186E12C081129002518F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C41186DF2C08110E002518F6 /* BuyPlan.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4456D5F2C08241F0070EC64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C41186D92C074786002518F6 /* Date+Extension.swift */,
+				C41186CE2C06C464002518F6 /* Rx+Extension.swift */,
+				C4456D602C08242F0070EC64 /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C46963B22C0482F80035D6E7 = {
 			isa = PBXGroup;
 			children = (
 				C46963BD2C0482F80035D6E7 /* PIP */,
 				C46963BC2C0482F80035D6E7 /* Products */,
+				C46963D42C0488640035D6E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +224,24 @@
 		C46963BD2C0482F80035D6E7 /* PIP */ = {
 			isa = PBXGroup;
 			children = (
+				C41186AB2C0577F6002518F6 /* Assets */,
+				C41186A12C0572A7002518F6 /* Sources */,
 				C46963BE2C0482F80035D6E7 /* AppDelegate.swift */,
-				C46963C02C0482F80035D6E7 /* SceneDelegate.swift */,
-				C46963C22C0482F80035D6E7 /* ViewController.swift */,
 				C46963C42C0482F80035D6E7 /* Main.storyboard */,
 				C46963C72C0482F90035D6E7 /* Assets.xcassets */,
 				C46963C92C0482F90035D6E7 /* LaunchScreen.storyboard */,
 				C46963CC2C0482F90035D6E7 /* Info.plist */,
 			);
 			path = PIP;
+			sourceTree = "<group>";
+		};
+		C46963D42C0488640035D6E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C46963D72C0488690035D6E7 /* AVFoundation.framework */,
+				C46963D52C0488640035D6E7 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +254,22 @@
 				C46963B72C0482F80035D6E7 /* Sources */,
 				C46963B82C0482F80035D6E7 /* Frameworks */,
 				C46963B92C0482F80035D6E7 /* Resources */,
+				C411869B2C0571DA002518F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PIP;
+			packageProductDependencies = (
+				C411869D2C057269002518F6 /* SnapKit */,
+				C41186C02C06B212002518F6 /* RxBlocking */,
+				C41186C22C06B212002518F6 /* RxCocoa */,
+				C41186C42C06B212002518F6 /* RxRelay */,
+				C41186D12C06CC77002518F6 /* SFSymbolsMacro */,
+				C41186DC2C074864002518F6 /* SwiftDate */,
+				C4456D5D2C081CB90070EC64 /* SwiftRichString */,
+			);
 			productName = PIP;
 			productReference = C46963BB2C0482F80035D6E7 /* PIP.app */;
 			productType = "com.apple.product-type.application";
@@ -109,8 +296,16 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C46963B22C0482F80035D6E7;
+			packageReferences = (
+				C411869C2C057269002518F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C41186BF2C06B211002518F6 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C41186D02C06CC77002518F6 /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */,
+				C41186DB2C074864002518F6 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				C4456D5C2C081CB90070EC64 /* XCRemoteSwiftPackageReference "SwiftRichString" */,
+			);
 			productRefGroup = C46963BC2C0482F80035D6E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +322,7 @@
 			files = (
 				C46963CB2C0482F90035D6E7 /* LaunchScreen.storyboard in Resources */,
 				C46963C82C0482F90035D6E7 /* Assets.xcassets in Resources */,
+				C41186AD2C057804002518F6 /* Localizable.xcstrings in Resources */,
 				C46963C62C0482F80035D6E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +334,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46963C32C0482F80035D6E7 /* ViewController.swift in Sources */,
+				C41186A82C057301002518F6 /* SettingViewController.swift in Sources */,
+				C41186E02C08110F002518F6 /* BuyPlan.swift in Sources */,
+				C41186AA2C0575AD002518F6 /* BaseNavigationController.swift in Sources */,
+				C41186D42C06CCBF002518F6 /* SFSymbols.swift in Sources */,
 				C46963BF2C0482F80035D6E7 /* AppDelegate.swift in Sources */,
-				C46963C12C0482F80035D6E7 /* SceneDelegate.swift in Sources */,
+				C41186CF2C06C464002518F6 /* Rx+Extension.swift in Sources */,
+				C41186A32C0572B9002518F6 /* MainTabViewController.swift in Sources */,
+				C41186C72C06B4F3002518F6 /* BaseViewController.swift in Sources */,
+				C41186A62C0572FA002518F6 /* HomeViewController.swift in Sources */,
+				C41186B62C059DB7002518F6 /* NiblessView.swift in Sources */,
+				C41186BC2C05E70F002518F6 /* CardStyleSelectionView.swift in Sources */,
+				C4456D612C08242F0070EC64 /* Color+Extension.swift in Sources */,
+				C41186BE2C05EE5C002518F6 /* AppStore.swift in Sources */,
+				C41186B22C0599BB002518F6 /* Utils.swift in Sources */,
+				C41186D62C06F5EB002518F6 /* AddCalendarViewController.swift in Sources */,
+				C41186B42C059B64002518F6 /* PIPCard.swift in Sources */,
+				C41186B82C05C09B002518F6 /* WatchDial.swift in Sources */,
+				C41186D82C0703AB002518F6 /* StaticTableView.swift in Sources */,
+				C41186BA2C05D895002518F6 /* ListLayoutConfig.swift in Sources */,
+				C41186DA2C074786002518F6 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,20 +505,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7467638S34;
+				DEVELOPMENT_TEAM = 2795FFTPWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PIP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.PIP;
+				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,20 +535,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7467638S34;
+				DEVELOPMENT_TEAM = 2795FFTPWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PIP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.PIP;
+				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,6 +580,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C411869C2C057269002518F6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		C41186BF2C06B211002518F6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+		C41186D02C06CC77002518F6 /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SFSymbolsMacro.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.2;
+			};
+		};
+		C41186DB2C074864002518F6 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		C4456D5C2C081CB90070EC64 /* XCRemoteSwiftPackageReference "SwiftRichString" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftRichString.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C411869D2C057269002518F6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C411869C2C057269002518F6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C41186C02C06B212002518F6 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C41186BF2C06B211002518F6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		C41186C22C06B212002518F6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C41186BF2C06B211002518F6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C41186C42C06B212002518F6 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C41186BF2C06B211002518F6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		C41186D12C06CC77002518F6 /* SFSymbolsMacro */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C41186D02C06CC77002518F6 /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */;
+			productName = SFSymbolsMacro;
+		};
+		C41186DC2C074864002518F6 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C41186DB2C074864002518F6 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		C4456D5D2C081CB90070EC64 /* SwiftRichString */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4456D5C2C081CB90070EC64 /* XCRemoteSwiftPackageReference "SwiftRichString" */;
+			productName = SwiftRichString;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C46963B32C0482F80035D6E7 /* Project object */;
 }
