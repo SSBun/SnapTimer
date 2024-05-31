@@ -108,7 +108,7 @@ extension AVAudioSession {
             return
         }
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [.allowBluetooth, .mixWithOthers, .allowAirPlay])
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [.allowBluetooth, .mixWithOthers, .allowAirPlay, .defaultToSpeaker])
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             logger.error("Failed to set up audio session: \(error)")
@@ -170,4 +170,34 @@ extension Thenable {
     }
 }
 
+// MARK: - NSObject + Thenable
+
 extension NSObject: Thenable {}
+
+@propertyWrapper
+class Reference<T: AnyObject> {
+    private weak var value: T?
+    
+    var wrappedValue: T? {
+        get { value }
+        set { value = newValue }
+    }
+    
+    var projectedValue: Reference<T> { self }
+}
+
+extension NSObject {
+    @discardableResult
+    func reference<T: AnyObject>(to ref: Reference<T>) -> Self {
+        ref.wrappedValue = self as? T
+        return self
+    }
+    
+    @discardableResult
+    func reference<T: AnyObject>(to refs: inout [Reference<T>]) -> Self {
+        let ref = Reference<T>()
+        ref.wrappedValue = self as? T
+        refs.append(ref)
+        return self
+    }
+}

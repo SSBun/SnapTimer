@@ -35,22 +35,28 @@ class StaticTableView: UITableView {
         didSet { reloadData() }
     }
     
-    func updateCellVisibility(hidden: Bool, at indexPath: IndexPath) {
-        // Checks array overflow
-        guard indexPath.section < listLayout._sections.count,
-              indexPath.row < listLayout._sections[indexPath.section]._cells.count
-        else {
-            logger.error("Index out of bounds")
-            return
-        }
+    func updateCellVisibility(hidden: Bool, at indexPaths: [IndexPath]) {
+        if indexPaths.isEmpty { return }
         
-        let cell = listLayout._sections[indexPath.section]._cells[indexPath.row]
-        guard cell.isHidden != hidden else { return }
-        cell.isHidden = hidden
+        var resultIndexPaths: [IndexPath] = []
+        for indexPath in indexPaths {
+            // Checks array overflow
+            guard indexPath.section < listLayout._sections.count,
+                  indexPath.row < listLayout._sections[indexPath.section]._cells.count
+            else {
+                logger.error("Index out of bounds")
+                continue
+            }
+            
+            let cell = listLayout._sections[indexPath.section]._cells[indexPath.row]
+            guard cell.isHidden != hidden else { continue }
+            cell.isHidden = hidden
+            resultIndexPaths.append(indexPath)
+        }
         if hidden {
-            deleteRows(at: [indexPath], with: .automatic)
+            deleteRows(at: resultIndexPaths, with: .automatic)
         } else {
-            insertRows(at: [indexPath], with: .automatic)
+            insertRows(at: resultIndexPaths, with: .automatic)
         }
     }
     

@@ -95,6 +95,39 @@
         }
       }
     },
+    "Remind audio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启提醒音"
+          }
+        }
+      }
+    },
+    "Remind vibration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启提醒震动"
+          }
+        }
+      }
+    },
+    "Reminder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提醒"
+          }
+        }
+      }
+    },
     "Seconds color" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -145,6 +178,17 @@
         }
       }
     },
+    "Show time remind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发令枪"
+          }
+        }
+      }
+    },
     "Size" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -186,6 +230,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "秒杀时钟"
+          }
+        }
+      }
+    },
+    "Time offset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抢跑时长"
           }
         }
       }

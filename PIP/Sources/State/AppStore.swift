@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - CardStyle
+
 enum CardStyle: Int, CustomStringConvertible, CaseIterable, Codable {
     case normal
     case medium
@@ -35,7 +37,13 @@ enum CardStyle: Int, CustomStringConvertible, CaseIterable, Codable {
     }
 }
 
+let appState = AppState()
+
+// MARK: - AppState
+
 class AppState {
+    fileprivate init() {}
+    
     @LocalStorageState(key: "selectedCardStyle")
     var selectedCardStyle: CardStyle = .normal
     
@@ -77,11 +85,17 @@ class AppState {
     @LocalStorageState(key: "timerRemindOffset")
     var timerRemindOffset: Int = 0
     
-    fileprivate init() {}
+    let remindConfig = RemindConfig()
 }
 
-let appState = AppState()
-
-
 extension AppState {
+    class RemindConfig {
+        fileprivate init() {}
+        
+        @LocalStorageState(key: "RemindConfig.enableAudioEffect")
+        var enableAudioEffect: Bool = false
+        
+        @LocalStorageState(key: "RemindConfig.enableVibrationEffect")
+        var enableVibrationEffect: Bool = false
+    }
 }

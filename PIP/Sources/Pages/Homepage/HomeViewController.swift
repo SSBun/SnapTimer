@@ -72,12 +72,9 @@ final class HomeViewController: BaseViewController {
         
         appState.$showMilliseconds
             .asyncBind(onNext: { [weak self] in
-                if let (indexPath, _) = self?.listView.listLayout.indexPath(of: "MillisecondsColor") {
-                    self?.listView.updateCellVisibility(hidden: !$0, at: indexPath)
-                }
-                if let (indexPath, _) = self?.listView.listLayout.indexPath(of: "TwoDigitalMilliseconds") {
-                    self?.listView.updateCellVisibility(hidden: !$0, at: indexPath)
-                }
+                guard let self else { return }
+                let indexes = listView.listLayout.indexPaths(of: "MillisecondsColor", "TwoDigitalMilliseconds").map(\.0)
+                listView.updateCellVisibility(hidden: !$0, at: indexes)
             })
             .disposed(by: disposeBag)
         
@@ -91,7 +88,7 @@ final class HomeViewController: BaseViewController {
         appState.$timerRemindOffset
             .bind(onNext: { [weak self] offset in
                 guard let self else { return }
-                if let (_, cell) = self.listView.listLayout.visibleIndexPath(of: "TimeOffset") {
+                if let (_, cell) = self.listView.listLayout.indexPaths(of: "TimeOffset").first {
                     (cell as? Cell)?.contentConfiguration = .list(.cell()) {
                         $0.attributedText = .local("Time offset") + ": \(offset) ms".set(style: Style {
                             $0.font = UIFont.systemFont(ofSize: 17)
@@ -198,7 +195,7 @@ final class HomeViewController: BaseViewController {
                 })))
                 // Select seconds color
                 Cell(.accessory(.list(.cell()) { $0.text = .local("Seconds color")}, accessory: UIColorWell(frame: CGRect(x: 0, y: 0, width: 30, height: 30)).then({ colorWell in
-                    colorWell.selectedColor = UIColor(hexString: appState.timeColor)
+                    colorWell.selectedColor = .hex(appState.timeColor)
                     colorWell.rx.controlEvent(.valueChanged)
                         .compactMap({ [weak colorWell] in colorWell?.selectedColor?.hexString })
                         .distinctUntilChanged()
@@ -209,7 +206,7 @@ final class HomeViewController: BaseViewController {
                 })))
                 // Select background color
                 Cell(.accessory(.list(.cell()) { $0.text = .local("Background color")}, accessory: UIColorWell(frame: CGRect(x: 0, y: 0, width: 30, height: 30)).then({ colorWell in
-                    colorWell.selectedColor = UIColor(hexString: appState.timeBackgroundColor)
+                    colorWell.selectedColor = .hex(appState.timeBackgroundColor)
                     colorWell.rx.controlEvent(.valueChanged)
                         .compactMap({ [weak colorWell] in colorWell?.selectedColor?.hexString })
                         .distinctUntilChanged()
@@ -220,7 +217,7 @@ final class HomeViewController: BaseViewController {
                 })))
                 // Select milliseconds color
                 Cell(.accessory(.list(.cell()) { $0.text = .local("Milliseconds color")}, accessory: UIColorWell(frame: CGRect(x: 0, y: 0, width: 30, height: 30)).then({ colorWell in
-                    colorWell.selectedColor = UIColor(hexString: appState.timeMillisecondColor)
+                    colorWell.selectedColor = .hex(appState.timeMillisecondColor)
                     colorWell.rx.controlEvent(.valueChanged)
                         .compactMap({ [weak colorWell] in colorWell?.selectedColor?.hexString })
                         .distinctUntilChanged()
@@ -234,23 +231,33 @@ final class HomeViewController: BaseViewController {
             }
             .header(height: 0)
             
+            var remindControlRefs: [Reference<UIControl>] = []
             Section {
                 // Whether to show timer reminder
-                Cell(.accessory(.list(.cell()) { $0.text = .local("Show timer reminder")}, accessory: UISwitch().then({ switchBtn in
+                Cell(.accessory(.list(.subtitleCell()) {
+                    $0.text = .local("Show time remind")
+                    $0.prefersSideBySideTextAndSecondaryText = true
+                    $0.textToSecondaryTextHorizontalPadding = 20
+                    $0.secondaryAttributedText = "三黄灯，一绿灯".set(style: Style{
+                        $0.color = UIColor.secondaryLabel
+                    })
+                }, accessory: UISwitch().then({ switchBtn in
                     appState.$showTimerReminder
                         .distinctUntilChanged()
-                        .bind { [weak switchBtn] in
-                            switchBtn?.setOn($0, animated: true)
+                        .asyncBind { [weak switchBtn] showRemind in
+                            switchBtn?.setOn(showRemind, animated: true)
+                            remindControlRefs.compactMap(\.wrappedValue).forEach({ control in control.isEnabled = showRemind })
                         }.disposed(by: disposeBag)
                     switchBtn.rx.isOn
                         .skip(1)
-                        .bind {
+                        .asyncBind {
                             appState.showTimerReminder = $0
                         }
                         .disposed(by: disposeBag)
                 })))
                 // Timer reminder offset stepper
                 Cell(.accessory(.list(.cell()), accessory: UIStepper().then({ stepper in
+                    stepper.reference(to: &remindControlRefs)
                     stepper.frame = .init(origin: .zero, size: .init(width: 150, height: 30))
                     stepper.minimumValue = 0
                     stepper.maximumValue = 500
@@ -258,15 +265,53 @@ final class HomeViewController: BaseViewController {
                     stepper.value = Double(appState.timerRemindOffset)
                     stepper.rx.value
                         .distinctUntilChanged()
-                        .bind {
+                        .asyncBind {
                             appState.timerRemindOffset = Int($0)
                         }
                         .disposed(by: disposeBag)
                 })))
                 .flag("TimeOffset")
             }
-            .header(.text(.local("Remind")))
+            .header(.text(.local("Reminder")))
             .footer(.text("抢购时，考虑到网络请求需要时间，提前100-300毫秒点击购买，秒杀的成功率更高!"))
+            
+            Section {
+                Cell(.accessory(.list(.cell()) { $0.text = .local("Remind audio")}, accessory: UISwitch().then({ switchBtn in
+                    switchBtn.reference(to: &remindControlRefs)
+                    appState.remindConfig.$enableAudioEffect
+                        .distinctUntilChanged()
+                        .asyncBind { [weak switchBtn] in
+                            switchBtn?.setOn($0, animated: true)
+                        }.disposed(by: disposeBag)
+                    switchBtn.rx.isOn
+                        .skip(1)
+                        .asyncBind {
+                            appState.remindConfig.enableAudioEffect = $0
+                            if $0 {
+                                RemindEffectTool.shared.play(.go)
+                            }
+                        }
+                        .disposed(by: disposeBag)
+                })))
+                Cell(.accessory(.list(.cell()) { $0.text = .local("Remind vibration")}, accessory: UISwitch().then({ switchBtn in
+                    switchBtn.reference(to: &remindControlRefs)
+                    appState.remindConfig.$enableVibrationEffect
+                        .distinctUntilChanged()
+                        .asyncBind { [weak switchBtn] in
+                            switchBtn?.setOn($0, animated: true)
+                        }.disposed(by: disposeBag)
+                    switchBtn.rx.isOn
+                        .skip(1)
+                        .asyncBind {
+                            appState.remindConfig.enableVibrationEffect = $0
+                            if $0 {
+                                RemindEffectTool.shared.vibrate(.heavy)
+                            }
+                        }
+                        .disposed(by: disposeBag)
+                })))
+            }
+            .header(height: 0)
         }
         
         DispatchQueue.main.async {

@@ -40,6 +40,9 @@
 		C46963CB2C0482F90035D6E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46963C92C0482F90035D6E7 /* LaunchScreen.storyboard */; };
 		C46963D62C0488640035D6E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46963D52C0488640035D6E7 /* AVKit.framework */; };
 		C46963D82C0488690035D6E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46963D72C0488690035D6E7 /* AVFoundation.framework */; };
+		C4FE074A2C0979D000F9CBF1 /* light_dong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4FE07482C0979D000F9CBF1 /* light_dong.mp3 */; };
+		C4FE074B2C0979D000F9CBF1 /* light_di.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4FE07492C0979D000F9CBF1 /* light_di.mp3 */; };
+		C4FE074D2C097A1100F9CBF1 /* RemindEffectTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE074C2C097A1100F9CBF1 /* RemindEffectTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +87,9 @@
 		C46963CC2C0482F90035D6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46963D52C0488640035D6E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		C46963D72C0488690035D6E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C4FE07482C0979D000F9CBF1 /* light_dong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = light_dong.mp3; sourceTree = "<group>"; };
+		C4FE07492C0979D000F9CBF1 /* light_di.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = light_di.mp3; sourceTree = "<group>"; };
+		C4FE074C2C097A1100F9CBF1 /* RemindEffectTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindEffectTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 			children = (
 				C4456D5F2C08241F0070EC64 /* Extensions */,
 				C41186B12C0599BB002518F6 /* Utils.swift */,
+				C4FE074C2C097A1100F9CBF1 /* RemindEffectTool.swift */,
 				C41186D32C06CCBF002518F6 /* SFSymbols.swift */,
 				C41186B52C059DB7002518F6 /* NiblessView.swift */,
 				C41186A22C0572B9002518F6 /* MainTabViewController.swift */,
@@ -224,13 +231,11 @@
 		C46963BD2C0482F80035D6E7 /* PIP */ = {
 			isa = PBXGroup;
 			children = (
+				C46963CC2C0482F90035D6E7 /* Info.plist */,
 				C41186AB2C0577F6002518F6 /* Assets */,
 				C41186A12C0572A7002518F6 /* Sources */,
 				C46963BE2C0482F80035D6E7 /* AppDelegate.swift */,
-				C46963C42C0482F80035D6E7 /* Main.storyboard */,
-				C46963C72C0482F90035D6E7 /* Assets.xcassets */,
-				C46963C92C0482F90035D6E7 /* LaunchScreen.storyboard */,
-				C46963CC2C0482F90035D6E7 /* Info.plist */,
+				C4FE07472C09790200F9CBF1 /* Resources */,
 			);
 			path = PIP;
 			sourceTree = "<group>";
@@ -242,6 +247,18 @@
 				C46963D52C0488640035D6E7 /* AVKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4FE07472C09790200F9CBF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4FE07492C0979D000F9CBF1 /* light_di.mp3 */,
+				C4FE07482C0979D000F9CBF1 /* light_dong.mp3 */,
+				C46963C42C0482F80035D6E7 /* Main.storyboard */,
+				C46963C72C0482F90035D6E7 /* Assets.xcassets */,
+				C46963C92C0482F90035D6E7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46963CB2C0482F90035D6E7 /* LaunchScreen.storyboard in Resources */,
+				C4FE074A2C0979D000F9CBF1 /* light_dong.mp3 in Resources */,
+				C4FE074B2C0979D000F9CBF1 /* light_di.mp3 in Resources */,
 				C46963C82C0482F90035D6E7 /* Assets.xcassets in Resources */,
 				C41186AD2C057804002518F6 /* Localizable.xcstrings in Resources */,
 				C46963C62C0482F80035D6E7 /* Main.storyboard in Resources */,
@@ -345,6 +364,7 @@
 				C41186A62C0572FA002518F6 /* HomeViewController.swift in Sources */,
 				C41186B62C059DB7002518F6 /* NiblessView.swift in Sources */,
 				C41186BC2C05E70F002518F6 /* CardStyleSelectionView.swift in Sources */,
+				C4FE074D2C097A1100F9CBF1 /* RemindEffectTool.swift in Sources */,
 				C4456D612C08242F0070EC64 /* Color+Extension.swift in Sources */,
 				C41186BE2C05EE5C002518F6 /* AppStore.swift in Sources */,
 				C41186B22C0599BB002518F6 /* Utils.swift in Sources */,
@@ -503,11 +523,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2795FFTPWT;
+				DEVELOPMENT_TEAM = ZSZQ2C58XN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PIP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "秒杀时钟";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -520,8 +542,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyfs.pip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,11 +556,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2795FFTPWT;
+				DEVELOPMENT_TEAM = ZSZQ2C58XN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PIP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "秒杀时钟";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -550,8 +575,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cool.csl.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyfs.pip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

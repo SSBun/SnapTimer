@@ -17,33 +17,34 @@ struct ListLayout {
         _sections = builder()
     }
     
-    func indexPath(of flag: String) -> (IndexPath, ListItem)? {
+    func indexPaths(of flags: String...) -> [(IndexPath, ListItem)] {
+        var result: [(IndexPath, ListItem)] = []
         for (sectionIndex, section) in _sections.enumerated() {
-            if section.flag == flag {
-                return (IndexPath(row: 0, section: sectionIndex), section)
+            if let flag = section.flag, flags.contains(flag) {
+                result.append((IndexPath(row: 0, section: sectionIndex), section))
             }
             for (cellIndex, cell) in section._cells.enumerated() {
-                if cell.flag == flag {
-                    return (IndexPath(row: cellIndex, section: sectionIndex), cell)
+                if let flag = cell.flag, flags.contains(flag) {
+                    result.append((IndexPath(row: cellIndex, section: sectionIndex), cell))
                 }
             }
         }
-        return nil
+        return result
     }
-    
-    func visibleIndexPath(of flag: String) -> (IndexPath, ListItem)? {
-        for (sectionIndex, section) in sections.enumerated() {
-            if section.flag == flag {
-                return (IndexPath(row: 0, section: sectionIndex), section)
-            }
-            for (cellIndex, cell) in section.cells.enumerated() {
-                if cell.flag == flag {
-                    return (IndexPath(row: cellIndex, section: sectionIndex), cell)
-                }
-            }
-        }
-        return nil
-    }
+//    
+//    func visibleIndexPaths(of flags: String...) -> [(IndexPath, ListItem)] {
+//        for (sectionIndex, section) in sections.enumerated() {
+//            if section.flag == flag {
+//                return (IndexPath(row: 0, section: sectionIndex), section)
+//            }
+//            for (cellIndex, cell) in section.cells.enumerated() {
+//                if cell.flag == flag {
+//                    return (IndexPath(row: cellIndex, section: sectionIndex), cell)
+//                }
+//            }
+//        }
+//        return nil
+//    }
 }
 
 class ListItem {
