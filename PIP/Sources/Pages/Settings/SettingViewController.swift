@@ -22,9 +22,9 @@ final class SettingViewController: BaseViewController {
     )
     private lazy var editBtn = UIBarButtonItem(
         title: .local("Edit"),
-        style: .plain,
-        target: self,
-        action: #selector(clickEditBtn)
+        primaryAction: UIAction(handler: { [weak self] _ in
+            self?.clickEditBtn()
+        })
     )
     
     private var cancellables: Set<AnyCancellable> = []
